@@ -1,9 +1,7 @@
-using System.Net;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.DataAcesss;
 using WebApi.DataTransfer;
-using WebApi.Helpers.Exceptions;
 using WebApi.Models;
 using WebApi.Services;
 
@@ -27,7 +25,7 @@ public class UserController : ControllerBase {
     public async Task<ActionResult<IEnumerable<User>>> GetAllUser() {
         _logger.LogDebug("Getting all users");
 
-        // throw new HttpException(HttpStatusCode.BadRequest, "Bad request test");
+        // throw new HttpException(HttpStatusCode.BadRequest, "Error test");
         
         return Ok(await _userDao.GetUsers());
     }

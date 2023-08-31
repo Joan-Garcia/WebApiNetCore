@@ -19,8 +19,8 @@ public class JwtService {
     public string GenerateToken(User user) {
 
         var claims = new Claim[] {
-            new(JwtRegisteredClaimNames.Sub, user.IdPersonal.ToString()),
-            new(JwtRegisteredClaimNames.Name, user.Name)
+            new(JwtClaims.IdPersonal, user.IdPersonal.ToString()),
+            new(JwtClaims.Name, user.Name)
         };
 
         var signingCredentials = new SigningCredentials(

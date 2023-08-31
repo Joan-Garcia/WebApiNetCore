@@ -17,7 +17,7 @@ public class UserDao {
 
     public async Task<IEnumerable<User>> GetUsers(IDbTransaction? transaction = null) {
 
-        string query = @"
+        const string query = @"
             SELECT
 	            bu.id_personal AS IdPersonal,
 	            CONCAT_WS(' ', p.nombre, p.apepaterno, p.apematerno) Name,
@@ -46,7 +46,7 @@ public class UserDao {
 
     public async Task<User> GetUser(int IdPersonal, IDbTransaction? transaction = null) {
 
-        string query = @"
+        const string query = @"
             SELECT
 	            bu.id_personal AS IdPersonal,
 	            CONCAT_WS(' ', p.nombre, p.apepaterno, p.apematerno) Name,
@@ -75,7 +75,7 @@ public class UserDao {
 
     public async Task<int> CreateUser(UserDto user, IDbTransaction? transaction = null) {
 
-        string query = @"
+        const string query = @"
             INSERT INTO innovacion.boxsh_usuarios (
                 id_personal,
                 password,
@@ -104,7 +104,7 @@ public class UserDao {
 
     public async Task<int> UpdateUser(UserDto user, IDbTransaction? transaction = null) {
 
-        string query = @"
+        const string query = @"
             UPDATE innovacion.boxsh_usuarios SET
                 password = @Password,
                 estatus = @Estatus
@@ -126,7 +126,7 @@ public class UserDao {
 
     public async Task<int> DeleteUser(int IdPersonal, IDbTransaction? transaction = null) {
 
-        string query = @"
+        const string query = @"
             DELETE FROM innovacion.boxsh_usuarios
             WHERE id_personal = @IdPersonal;
         ";

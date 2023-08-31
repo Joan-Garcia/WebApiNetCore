@@ -39,13 +39,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// app.UseSerilogRequestLogging();
-
-app.UseHttpsRedirection();
-
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+app.UseSerilogRequestLogging();
+
+app.UseHttpsRedirection();
 
 app.UseMiddleware<ErrorHandlingMiddleware>();
 
