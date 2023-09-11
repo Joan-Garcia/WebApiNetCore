@@ -12,6 +12,7 @@ builder.Services.AddTransient<ErrorHandlingMiddleware>();
 
 // Add services to the container.
 builder.Services.AddSingleton<Database>();
+builder.Services.AddSingleton<RedisService>();
 builder.Services.AddSingleton<UserDao>();
 builder.Services.AddScoped<UserService>();
 

@@ -71,4 +71,13 @@ public class UserController : ControllerBase {
 
         return Ok("Ok");
     }
+
+    [HttpGet("TestRedis")]
+    public async Task<ActionResult<string>> TestRedis() {
+        _logger.LogDebug("Testing Redis");
+
+        var x = await _userService.TestRedis();
+
+        return Ok(x);
+    }
 }
